@@ -1,20 +1,20 @@
-import java.util.Scanner;
-
 public class TestFactorial {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter a number: ");
-        int n = sc.nextInt();
-
         Factorial f = new Factorial();
 
-        long result = f.calculate(n);
+        long expected = 120;
+        long actual = f.calculate(5);
 
-        System.out.println("Factorial of " + n + " = " + result);
+        if (actual == expected) {
+            System.out.println("TEST PASSED");
+        } else {
+            System.out.println("TEST FAILED");
+            System.out.println("Expected: " + expected);
+            System.out.println("Actual: " + actual);
 
-        sc.close();
+            System.exit(1);   // Tell Jenkins that test failed
+        }
     }
 }
