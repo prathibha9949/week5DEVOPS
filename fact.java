@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-class Main {
+public class TestFactorial {
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -8,13 +9,11 @@ class Main {
         System.out.print("Enter a number: ");
         int n = sc.nextInt();
 
-        long fact = 1;
+        Factorial f = new Factorial();
 
-        for (int i = 1; i <= n; i++) {
-            fact = fact * i;
-        }
+        long result = f.calculate(n);
 
-        System.out.println("Factorial of " + n + " = " + fact);
+        System.out.println("Factorial of " + n + " = " + result);
 
         sc.close();
     }
